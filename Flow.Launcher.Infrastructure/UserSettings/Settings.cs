@@ -36,6 +36,18 @@ namespace Flow.Launcher.Infrastructure.UserSettings
         private string _theme = Constant.DefaultTheme;
         public string Hotkey { get; set; } = $"{KeyConstant.Alt} + {KeyConstant.Space}";
         public string OpenResultModifiers { get; set; } = KeyConstant.Alt;
+        public string OpenContainingFolderHotkey { get; set; } = "Ctrl+Enter";
+        public string RunAsAdminHotkey { get; set; } = "Ctrl+Shift+Enter";
+        public string CopyFilePathHotkey { get; set; } = "Ctrl+Shift+C";
+        public string OpenContextMenuHotkey2 { get; set; } = "Shift+Enter";
+        public string OpenNativeContextMenuHotkey { get; set; } = "Alt+Enter";
+        public string ToggleGameModeHotkey { get; set; } = "Ctrl+F12";
+        public string RequeryHotkey { get; set; } = "Ctrl+R";
+        public string ReloadPluginHotkey { get; set; } = "F5";
+        public string QuickWidthIncreaseHotkey { get; set; } = "Ctrl+]";
+        public string QuickWidthDecreaseHotkey { get; set; } = "Ctrl+[";
+        public string QuickHeightIncreaseHotkey { get; set; } = "Ctrl+Plus";
+        public string QuickHeightDecreaseHotkey { get; set; } = "Ctrl+Minus";
         public string ColorScheme { get; set; } = "System";
         public bool ShowOpenResultHotkey { get; set; } = true;
         public double WindowSize { get; set; } = 580;
@@ -439,6 +451,30 @@ namespace Flow.Launcher.Infrastructure.UserSettings
                     list.Add(new(CycleHistoryUpHotkey, "CycleHistoryUpHotkey", () => CycleHistoryUpHotkey = ""));
                 if (!string.IsNullOrEmpty(CycleHistoryDownHotkey))
                     list.Add(new(CycleHistoryDownHotkey, "CycleHistoryDownHotkey", () => CycleHistoryDownHotkey = ""));
+                if (!string.IsNullOrEmpty(OpenContainingFolderHotkey))
+                    list.Add(new(OpenContainingFolderHotkey, "OpenContainFolderHotkey", () => OpenContainingFolderHotkey = ""));
+                if (!string.IsNullOrEmpty(RunAsAdminHotkey))
+                    list.Add(new(RunAsAdminHotkey, "HotkeyCtrlShiftEnterDesc", () => RunAsAdminHotkey = ""));
+                if (!string.IsNullOrEmpty(CopyFilePathHotkey))
+                    list.Add(new(CopyFilePathHotkey, "CopyFilePathHotkey", () => CopyFilePathHotkey = ""));
+                if (!string.IsNullOrEmpty(OpenContextMenuHotkey2))
+                    list.Add(new(OpenContextMenuHotkey2, "OpenContextMenuHotkey", () => OpenContextMenuHotkey2 = ""));
+                if (!string.IsNullOrEmpty(OpenNativeContextMenuHotkey))
+                    list.Add(new(OpenNativeContextMenuHotkey, "HotkeyOpenResult", () => OpenNativeContextMenuHotkey = ""));
+                if (!string.IsNullOrEmpty(ToggleGameModeHotkey))
+                    list.Add(new(ToggleGameModeHotkey, "ToggleGameModeHotkey", () => ToggleGameModeHotkey = ""));
+                if (!string.IsNullOrEmpty(RequeryHotkey))
+                    list.Add(new(RequeryHotkey, "HotkeyRequery", () => RequeryHotkey = ""));
+                if (!string.IsNullOrEmpty(ReloadPluginHotkey))
+                    list.Add(new(ReloadPluginHotkey, "ReloadPluginHotkey", () => ReloadPluginHotkey = ""));
+                if (!string.IsNullOrEmpty(QuickWidthIncreaseHotkey))
+                    list.Add(new(QuickWidthIncreaseHotkey, "QuickWidthHotkey", () => QuickWidthIncreaseHotkey = ""));
+                if (!string.IsNullOrEmpty(QuickWidthDecreaseHotkey))
+                    list.Add(new(QuickWidthDecreaseHotkey, "QuickWidthHotkey", () => QuickWidthDecreaseHotkey = ""));
+                if (!string.IsNullOrEmpty(QuickHeightIncreaseHotkey))
+                    list.Add(new(QuickHeightIncreaseHotkey, "QuickHeightHotkey", () => QuickHeightIncreaseHotkey = ""));
+                if (!string.IsNullOrEmpty(QuickHeightDecreaseHotkey))
+                    list.Add(new(QuickHeightDecreaseHotkey, "QuickHeightHotkey", () => QuickHeightDecreaseHotkey = ""));
 
                 // Custom Query Hotkeys
                 foreach (var customPluginHotkey in CustomPluginHotkeys)
@@ -460,21 +496,23 @@ namespace Flow.Launcher.Infrastructure.UserSettings
                 new("Left", "HotkeyUpDownDesc"),
                 new("Right", "HotkeyUpDownDesc"),
                 new("Escape", "HotkeyESCDesc"),
-                new("F5", "ReloadPluginHotkey"),
                 new("Alt+Home", "HotkeySelectFirstResult"),
                 new("Alt+End", "HotkeySelectLastResult"),
-                new("Ctrl+R", "HotkeyRequery"),
-                new("Ctrl+OemCloseBrackets", "QuickWidthHotkey"),
-                new("Ctrl+OemOpenBrackets", "QuickWidthHotkey"),
-                new("Ctrl+OemPlus", "QuickHeightHotkey"),
-                new("Ctrl+OemMinus", "QuickHeightHotkey"),
-                new("Ctrl+Shift+Enter", "HotkeyCtrlShiftEnterDesc"),
-                new("Shift+Enter", "OpenContextMenuHotkey"),
                 new("Enter", "HotkeyRunDesc"),
-                new("Ctrl+Enter", "OpenContainFolderHotkey"),
-                new("Alt+Enter", "HotkeyOpenResult"),
-                new("Ctrl+F12", "ToggleGameModeHotkey"),
-                new("Ctrl+Shift+C", "CopyFilePathHotkey"),
+
+                // Handled by new properties
+                // new("F5", "ReloadPluginHotkey"),
+                // new("Ctrl+R", "HotkeyRequery"),
+                // new("Ctrl+OemCloseBrackets", "QuickWidthHotkey"), // Ctrl+]
+                // new("Ctrl+OemOpenBrackets", "QuickWidthHotkey"), // Ctrl+[
+                // new("Ctrl+OemPlus", "QuickHeightHotkey"), // Ctrl+Plus
+                // new("Ctrl+OemMinus", "QuickHeightHotkey"), // Ctrl+Minus
+                // new("Ctrl+Shift+Enter", "HotkeyCtrlShiftEnterDesc"),
+                // new("Shift+Enter", "OpenContextMenuHotkey"),
+                // new("Ctrl+Enter", "OpenContainFolderHotkey"),
+                // new("Alt+Enter", "HotkeyOpenResult"),
+                // new("Ctrl+F12", "ToggleGameModeHotkey"),
+                // new("Ctrl+Shift+C", "CopyFilePathHotkey"),
 
                 new($"{OpenResultModifiers}+D1", "HotkeyOpenResultN", 1),
                 new($"{OpenResultModifiers}+D2", "HotkeyOpenResultN", 2),

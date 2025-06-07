@@ -77,13 +77,13 @@
                         Title="{DynamicResource OpenContainFolderHotkey}"
                         Icon="&#xe8b7;"
                         Type="Inside">
-                        <cc:HotkeyDisplay Keys="Ctrl+Enter" />
+                        <flowlauncher:HotkeyControl Type="OpenContainingFolderHotkey" DefaultHotkey="Ctrl+Enter" ValidateKeyGesture="False" />
                     </cc:Card>
                     <cc:Card
                         Title="{DynamicResource RunAsAdminHotkey}"
                         Icon="&#xe7ef;"
                         Type="Inside">
-                        <cc:HotkeyDisplay Keys="Ctrl+Shift+Enter" />
+                        <flowlauncher:HotkeyControl Type="RunAsAdminHotkey" DefaultHotkey="Ctrl+Shift+Enter" ValidateKeyGesture="False" />
                     </cc:Card>
                     <cc:Card
                         Title="{DynamicResource ToggleHistoryHotkey}"
@@ -98,7 +98,7 @@
                         Title="{DynamicResource CopyFilePathHotkey}"
                         Icon="&#xe8c8;"
                         Type="Inside">
-                        <cc:HotkeyDisplay Keys="Ctrl+Shift+C" />
+                        <flowlauncher:HotkeyControl Type="CopyFilePathHotkey" DefaultHotkey="Ctrl+Shift+C" ValidateKeyGesture="False" />
                     </cc:Card>
                     <cc:Card
                         Title="{DynamicResource OpenContextMenuHotkey}"
@@ -113,13 +113,13 @@
                         Title="{DynamicResource OpenContextMenuHotkey}"
                         Icon="&#xede3;"
                         Type="Inside">
-                        <cc:HotkeyDisplay Keys="Shift+Enter" />
+                        <flowlauncher:HotkeyControl Type="OpenContextMenuHotkey2" DefaultHotkey="Shift+Enter" ValidateKeyGesture="False" />
                     </cc:Card>
                     <cc:Card
                         Title="{DynamicResource OpenNativeContextMenuHotkey}"
                         Icon="&#xede3;"
                         Type="Inside">
-                        <cc:HotkeyDisplay Keys="Alt+Enter" />
+                        <flowlauncher:HotkeyControl Type="OpenNativeContextMenuHotkey" DefaultHotkey="Alt+Enter" ValidateKeyGesture="False" />
                     </cc:Card>
                     <cc:Card
                         Title="{DynamicResource SettingWindowHotkey}"
@@ -134,13 +134,13 @@
                         Title="{DynamicResource ToggleGameModeHotkey}"
                         Icon="&#xe7fc;"
                         Type="Inside">
-                        <cc:HotkeyDisplay Keys="Ctrl+F12" />
+                        <flowlauncher:HotkeyControl Type="ToggleGameModeHotkey" DefaultHotkey="Ctrl+F12" ValidateKeyGesture="False" />
                     </cc:Card>
                     <cc:Card
                         Title="{DynamicResource RequeryHotkey}"
                         Icon="&#xe72c;"
                         Type="Inside">
-                        <cc:HotkeyDisplay Keys="Ctrl+R" />
+                        <flowlauncher:HotkeyControl Type="RequeryHotkey" DefaultHotkey="Ctrl+R" ValidateKeyGesture="False" />
                     </cc:Card>
                     <cc:Card
                         Title="{DynamicResource CycleHistoryUpHotkey}"
@@ -165,7 +165,7 @@
                         Icon="&#xe72c;"
                         Sub="{DynamicResource ReloadPluginHotkeyToolTip}"
                         Type="Inside">
-                        <cc:HotkeyDisplay Keys="F5" />
+                        <flowlauncher:HotkeyControl Type="ReloadPluginHotkey" DefaultHotkey="F5" ValidateKeyGesture="False" />
                     </cc:Card>
                     <cc:Card
                         Title="{DynamicResource SelectPrevPageHotkey}"
@@ -191,8 +191,8 @@
                         Icon="&#xe7ea;"
                         Type="Inside">
                         <StackPanel Orientation="Horizontal">
-                            <cc:HotkeyDisplay Keys="Ctrl+[" />
-                            <cc:HotkeyDisplay Margin="4 0 0 0" Keys="Ctrl+]" />
+                            <flowlauncher:HotkeyControl Type="QuickWidthDecreaseHotkey" DefaultHotkey="Ctrl+[" ValidateKeyGesture="False" />
+                            <flowlauncher:HotkeyControl Margin="4 0 0 0" Type="QuickWidthIncreaseHotkey" DefaultHotkey="Ctrl+]" ValidateKeyGesture="False" />
                         </StackPanel>
                     </cc:Card>
                     <cc:Card
@@ -200,8 +200,8 @@
                         Icon="&#xe7eb;"
                         Type="Inside">
                         <StackPanel Orientation="Horizontal">
-                            <cc:HotkeyDisplay Keys="Ctrl+Plus" />
-                            <cc:HotkeyDisplay Margin="4 0 0 0" Keys="Ctrl+Minus" />
+                            <flowlauncher:HotkeyControl Type="QuickHeightIncreaseHotkey" DefaultHotkey="Ctrl+Plus" ValidateKeyGesture="False" />
+                            <flowlauncher:HotkeyControl Margin="4 0 0 0" Type="QuickHeightDecreaseHotkey" DefaultHotkey="Ctrl+Minus" ValidateKeyGesture="False" />
                         </StackPanel>
                     </cc:Card>
                 </StackPanel>

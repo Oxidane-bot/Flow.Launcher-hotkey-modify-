@@ -110,7 +110,19 @@ namespace Flow.Launcher
             SelectPrevItemHotkey,
             SelectPrevItemHotkey2,
             SelectNextItemHotkey,
-            SelectNextItemHotkey2
+            SelectNextItemHotkey2,
+            OpenContainingFolderHotkey,
+            RunAsAdminHotkey,
+            CopyFilePathHotkey,
+            OpenContextMenuHotkey2,
+            OpenNativeContextMenuHotkey,
+            ToggleGameModeHotkey,
+            RequeryHotkey,
+            ReloadPluginHotkey,
+            QuickWidthIncreaseHotkey,
+            QuickWidthDecreaseHotkey,
+            QuickHeightIncreaseHotkey,
+            QuickHeightDecreaseHotkey
         }
 
         // We can initialize settings in static field because it has been constructed in App constuctor
@@ -142,6 +154,18 @@ namespace Flow.Launcher
                     HotkeyType.SelectPrevItemHotkey2 => _settings.SelectPrevItemHotkey2,
                     HotkeyType.SelectNextItemHotkey => _settings.SelectNextItemHotkey,
                     HotkeyType.SelectNextItemHotkey2 => _settings.SelectNextItemHotkey2,
+                    HotkeyType.OpenContainingFolderHotkey => _settings.OpenContainingFolderHotkey,
+                    HotkeyType.RunAsAdminHotkey => _settings.RunAsAdminHotkey,
+                    HotkeyType.CopyFilePathHotkey => _settings.CopyFilePathHotkey,
+                    HotkeyType.OpenContextMenuHotkey2 => _settings.OpenContextMenuHotkey2,
+                    HotkeyType.OpenNativeContextMenuHotkey => _settings.OpenNativeContextMenuHotkey,
+                    HotkeyType.ToggleGameModeHotkey => _settings.ToggleGameModeHotkey,
+                    HotkeyType.RequeryHotkey => _settings.RequeryHotkey,
+                    HotkeyType.ReloadPluginHotkey => _settings.ReloadPluginHotkey,
+                    HotkeyType.QuickWidthIncreaseHotkey => _settings.QuickWidthIncreaseHotkey,
+                    HotkeyType.QuickWidthDecreaseHotkey => _settings.QuickWidthDecreaseHotkey,
+                    HotkeyType.QuickHeightIncreaseHotkey => _settings.QuickHeightIncreaseHotkey,
+                    HotkeyType.QuickHeightDecreaseHotkey => _settings.QuickHeightDecreaseHotkey,
                     _ => throw new System.NotImplementedException("Hotkey type not set")
                 };
             }
@@ -200,6 +224,42 @@ namespace Flow.Launcher
                         break;
                     case HotkeyType.SelectNextItemHotkey2:
                         _settings.SelectNextItemHotkey2 = value;
+                        break;
+                    case HotkeyType.OpenContainingFolderHotkey:
+                        _settings.OpenContainingFolderHotkey = value;
+                        break;
+                    case HotkeyType.RunAsAdminHotkey:
+                        _settings.RunAsAdminHotkey = value;
+                        break;
+                    case HotkeyType.CopyFilePathHotkey:
+                        _settings.CopyFilePathHotkey = value;
+                        break;
+                    case HotkeyType.OpenContextMenuHotkey2:
+                        _settings.OpenContextMenuHotkey2 = value;
+                        break;
+                    case HotkeyType.OpenNativeContextMenuHotkey:
+                        _settings.OpenNativeContextMenuHotkey = value;
+                        break;
+                    case HotkeyType.ToggleGameModeHotkey:
+                        _settings.ToggleGameModeHotkey = value;
+                        break;
+                    case HotkeyType.RequeryHotkey:
+                        _settings.RequeryHotkey = value;
+                        break;
+                    case HotkeyType.ReloadPluginHotkey:
+                        _settings.ReloadPluginHotkey = value;
+                        break;
+                    case HotkeyType.QuickWidthIncreaseHotkey:
+                        _settings.QuickWidthIncreaseHotkey = value;
+                        break;
+                    case HotkeyType.QuickWidthDecreaseHotkey:
+                        _settings.QuickWidthDecreaseHotkey = value;
+                        break;
+                    case HotkeyType.QuickHeightIncreaseHotkey:
+                        _settings.QuickHeightIncreaseHotkey = value;
+                        break;
+                    case HotkeyType.QuickHeightDecreaseHotkey:
+                        _settings.QuickHeightDecreaseHotkey = value;
                         break;
                     default:
                         throw new System.NotImplementedException("Hotkey type not set");
